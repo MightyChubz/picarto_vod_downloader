@@ -2,9 +2,7 @@
 extern crate log;
 
 use crate::program::Program;
-use simplelog::{
-    CombinedLogger, ConfigBuilder, LevelFilter, TermLogger, TerminalMode, WriteLogger,
-};
+use simplelog::{CombinedLogger, ConfigBuilder, LevelFilter, TermLogger, TerminalMode, WriteLogger, ColorChoice};
 use std::fs::File;
 
 mod program;
@@ -21,6 +19,7 @@ fn main() {
             },
             config.build(),
             TerminalMode::Mixed,
+            ColorChoice::Auto
         ),
         WriteLogger::new(
             LevelFilter::max(),

@@ -58,24 +58,24 @@ impl Program {
     fn match_commands(&self) -> ArgMatches {
         App::new("Picarto Stream Downloader")
             .version(crate_version!())
-            .author("McSib")
+            .author("MightyChubz")
             .about("A simple downloader for Picarto vods.")
             .arg(
-                Arg::with_name("input")
+                Arg::new("input")
                     .long("input")
-                    .short("i")
+                    .short('i')
                     .value_name("URL")
-                    .help("The input url.")
+                    .about("The input url.")
                     .required(true)
                     .takes_value(true)
                     .max_values(1),
             )
             .arg(
-                Arg::with_name("output")
+                Arg::new("output")
                     .long("output")
-                    .short("o")
+                    .short('o')
                     .value_name("FILE")
-                    .help("What the output file should be called.")
+                    .about("What the output file should be called.")
                     .required(true)
                     .takes_value(true)
                     .max_values(1),
